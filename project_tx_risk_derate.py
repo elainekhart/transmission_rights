@@ -57,7 +57,7 @@ for path in path_list:
     
 # Estimate impacts of delivering output to POD on flows across each path based on PTDFs
 project_info = project_information.loc[project]
-project_hourly_data = pd.read_csv(os.path.join('inputs','project_output',project_info['Hourly data']))
+project_hourly_data = pd.read_csv(os.path.join('inputs','project_hourly_data',project_info['Hourly data']))
 project_hourly_data['deliverable output (MW)'] = np.minimum(project_hourly_data['total output (MW)'],project_hourly_data['available LTF tx (MW)'])
 project_hourly_data['output at risk (MW)'] = project_hourly_data['total output (MW)'] - project_hourly_data['deliverable output (MW)']
 
